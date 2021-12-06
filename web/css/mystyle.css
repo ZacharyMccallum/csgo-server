@@ -1,0 +1,53 @@
+.contact-inline {
+  width: 40%;
+  min-width: 417px;
+  position: relative;
+  top: 5px;
+  display: block;
+}
+
+.largeimage {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+html {
+  background-color: #a7a7a8;
+}
+
+p {
+  padding: 10px 5px;
+  background-color: #bbb;
+  border: 2px solid black;
+}
+
+body {
+  font-family: "Courier New";
+  border: 1px solid black;
+  padding: 5px 15px;
+  background-color: #a7a7a8;
+}
+
+main figure {
+  padding: 5px 5px;
+  width: 415px;
+  border: solid 3px black;
+  object-fit: contain;
+  object-position: center;
+}
+/* unvisited link */
+main li a:link {
+  color: blue;
+}
+
+/* visited link */
+main li a:visited {
+  color: green;
+}
+
+/* mouse over link */
+main li a:hover {
+  color: hotpink;
+}
