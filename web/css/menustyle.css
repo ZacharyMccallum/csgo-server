@@ -5,7 +5,7 @@
 header {
   background-color: #CCC;
   padding: 5px 0px;
-  background-image: url(../img/flaglogo.jpg);
+  background-image: url(../src/img/flaglogo.jpg);
   background-repeat: no-repeat;
   background-size: 220px;
 }
