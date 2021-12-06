@@ -6,6 +6,13 @@
   display: block;
 }
 
+.csgo-inline {
+  width: 30%;
+  position: relative;
+  top: 2px;
+  display: inline-grid;
+}
+
 .largeimage {
   width: 400px;
   height: 300px;
