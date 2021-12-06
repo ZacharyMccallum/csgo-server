@@ -1,0 +1,61 @@
+// Colors available for use in Chat
+// {default}, {red}, {lightred}, {darkred}, {bluegrey}, {blue}, {darkblue}, {purple}, {yellow}, {gold}, {lightgreen}, {green}, {lime}, {grey}, {grey2}
+
+// Cores disponíveis para usar no Chat
+// {default}, {red}, {lightred}, {darkred}, {bluegrey}, {blue}, {darkblue}, {purple}, {yellow}, {gold}, {lightgreen}, {green}, {lime}, {grey}, {grey2}
+
+"Phrases"
+{
+	"KnifeOff"
+	{
+		"en"			"{green}Knife Damage {default}was {darkred}Disable{default}!"
+		"pt"			"{green}Dano da Faca {default}foi {darkred}Desastivado{default}!"
+		"pt_p"			"{green}Dano da Faca {default}foi {darkred}Desastivado{default}!"
+	}
+
+	"KnifeOn"
+	{
+		"en"			"{green}Knife Damage {default}was {green}Enable{default}!"
+		"pt"			"Dano da {green}Faca {default}foi {green}Ativado{default}!"
+		"pt_p"			"Dano da {green}Faca {default}foi {green}Ativado{default}!"
+	}
+
+
+
+
+	"KnifeDamageMenuTitle"
+	{
+		"en"			"[ Knife Damage ]"
+		"pt"			"[ Dano da Faca ]"
+		"pt_p"			"[ Dano da Faca ]"
+	}
+
+	"KnifeOffMenu"
+	{
+		"en"			"Disable Damage"
+		"pt"			"Desativar Dano"
+		"pt_p"			"Desativar Dano"
+	}
+
+	"KnifeOnMenu"
+	{
+		"en"			"Enable Damage"
+		"pt"			"Ativar Dano"
+		"pt_p"			"Ativar Dano"
+	}
+
+	"Knife Damage Title in Admin"
+	{
+		"en"			"Knife Damage"
+		"pt"			"Dano da Faca"
+		"pt_p"			"Dano da Faca"
+	}
+
+	"Knife Damage Buttom in Admin"
+	{
+		"en"			"Open Knife Damage Menu"
+		"pt"			"Abrir Menu do Dano da Faca"
+		"pt_p"			"Abrir Menu do Dano da Faca"
+	}
+}
+
