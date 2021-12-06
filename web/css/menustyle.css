@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #CCC;
+  padding: 5px 0px;
+  background-image: url(../img/flaglogo.jpg);
+  background-repeat: no-repeat;
+  background-size: 220px;
+}
+
+h1 {
+  padding: 30px 0px 0px 230px;
+  color: white;
+}
+
+body {
+  background-color: #a7a7a8;
+}
+
+article{
+  border: solid 1px grey;
+  padding: 0px 5px;
+}
+
+p {
+  color: #444;
+  font-size: 1.5em;
+}
+
+nav {
+  padding: 0px 0px 0px 210px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  margin: 0px 5px 5px 5px;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 10px;
+  border: solid black 1px;
+}
+
+nav a {
+  text-decoration: none;
+  color:white;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li:hover {
+  background-color: #111;
+  color: black;
+}
+
+/*The active link will be donted in a different color*/
+.active {
+  background-color: #4CAF50;
+}
