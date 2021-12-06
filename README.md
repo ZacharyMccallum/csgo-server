@@ -209,9 +209,37 @@ sudo systemctl start apache2.service
 
 Backup Strategy
 Backups are automatically set up to run at 2 am on the first day of a new month. The backup contents are shown below
+Contents of:
+sudo crontab -e
+* 2 0 * * /root/backup.sh >/dev/null 2>&1
 
-
-
-Launching Shell scripts from javascript calls from button pressed by user
-
+Shell script to backup - Auto
+#!/bin/bash
+####################################
+#
+# Backup to NFS mount script.
+#
+####################################
+# What to backup. 
+backup_files="/home/steam/Steam /etc /root /boot /var/www/html"
+# Where to backup to.
+dest="/mnt/backup"
+# Create archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+archive_file="$hostname-$day.tgz"
+# Print start status message.
+echo "Backing up $backup_files to $dest/$archive_file"
+date
+echo
+# Backup the files using tar.
+tar czf $dest/$archive_file $backup_files
+# Print end status message.
+echo
+echo "Backup finished"
+date
+# Long listing of files in $dest to check file sizes.
+ls -lh $dest
+#[edit] script created - zachary mccallum - 12/5/2021
+#main reference for backup script:https://ubuntu.com/server/docs/backups-shell-scripts
 
