@@ -18,6 +18,12 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+.code {
+  font-family: courier-New;
+  border: 1px solid red;
+  margin-left: 20px;
+  margin-top: 5px;
+}
 
 .guide {
   border: 2px solid black;

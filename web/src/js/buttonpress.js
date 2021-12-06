@@ -3,12 +3,21 @@ const shell = require('shelljs')
 
 
 function launchdm() {
-  shell.exec('./launchdm.sh')
+  var a = './launchdm.sh'
+  shell.exec(a)
 }
 function launchcomp() {
-  shell.exec('./launchcomp.sh')
+  var a = './launchcomp.sh'
+  shell.exec(a)
+
 }
 function launchcasual() {
-  shell.exec('./launchcasual.sh')
+  var a = './launchcasual.sh'
+  var file = log()
+  shell.exec(a)
 }
+
+//build into this - log function that saves status of launched instances
+//function log() {
+//}
 </script>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Contact Page</title>
+  <title>User Guide - CSGO Server Ubuntu</title>
   <link rel="stylesheet" href="../css/menustyle.css" />
   <link rel="stylesheet" href="../css/mystyle.css" />
 </head>
@@ -22,21 +22,26 @@
         <li><a href="launch.html">Launch</a></li>
       </ul>
     </nav>
-<br />
+    <br />
     <div class="guide">
       <h2>Technology Used</h2>
       <div>
+        <h2>Github</h2>
+        <p>
 
+          Used for code versioning, and project files storage
+          Repo found here: <a href=https://github.com/ZacharyMccallum/csgo-server>CSGO GitHub Repo</a>
+        </p>
 
         <h2>Google Cloud Platform:</h2>
         <p>
           Cloud hosting platform that provides necessary hardware and software as a service to users.
-        </p>
+
         <p class="red-note">
-          Instance Details:<br />
-          <b>name:</b> csgo-server<br />
+          <u>Instance Details:</u><br />
+          <b>name:</b> csgo-csi3660<br />
           <b>instance id:</b> 657742577793391306<br />
-          Machine configuration:<br />
+          <u>Machine Configuration:</u><br />
           <b>Machine type:</b> e2-medium<br />
           <b>CPU platform:</b> Intel Broadwell<br />
         </p>
@@ -44,113 +49,152 @@
       <div>
         <h2>Ubuntu 18.04 LTS</h2><br />
         <p>
-
           Linux Operating System version used during original configuration</p><br />
         <h2>Apache2</h2><br />
         <p>
           Used as web service handler for hosting html pages.
-          <p /><br />
+        </p><br />
       </div>
       <div>
         <h2>SteamCMD</h2>
-        Installation:<br />
-        <i>sudo apt-get install lib32gcc1</i><br />
-        <h2>Counter-Strike: Global Offensive</h2><br />
-        Environment to be emulated as a server instance<br />
+        <p>
+          <u>Installation:</u><br />
+          <i>sudo apt-get install lib32gcc1</i><br />
+        </p>
+        <h2>Counter-Strike: Global Offensive</h2>
+        <p>
+          Environment to be emulated as a server instance
+        </p>
       </div>
-      Required Materials
-      - Steam Game Server Management Tool -
-      https://steamcommunity.com/dev/managegameservers
-      This tool helps to create a dedicated game server account, which addresses the anonymous login vulnerability that existed upon initial configuration.
-      - Instructional runthrough -
-      https://stechalon.com/how-to-create-your-own-csgo-counter-strike-global-offensive-dedicated-custom-server-ubuntu-centos#run-csgo-on-server
-      This reference is used for the general setup and configuration of Ubuntu 18.04
-      Note - this hyperlink seems to fail upon clicking in the GCP console, please copy and paste into browser.
-      - Ports to open at firewall -
-      https://linustechtips.com/topic/722940-what-ports-to-forward-for-a-csgo-server/
-      - Ubuntu 18.04 full guide -
-      https://www.reddit.com/r/GlobalOffensive/comments/iwm0i9/how_to_create_a_free_csgo_server_using_google/
-      While troubleshooting connectivity issues, I began comparing configurations that were present in 1, but not the other. Here is where it was discovered that improper firewall rules had been set for the GCP instance initially.
-      - Steam server configs guide -
-      https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers#autoexec.cfg
-      This reference was used for configuration of sv_* variables following server creation
-      - Configure Apache for Ubuntu -
-      https://phoenixnap.com/kb/how-to-install-apache-web-server-on-ubuntu-18-04
-      This reference is helpful for the installation of, and configuration of apache web services
-      Service Implementation:
-      Google Cloud Platform
-      Create an instance with the minimum requirements:
-      2GB RAM
-      40GB Disk Space
-      Note: For this example runthrough - ec2-medium was used for hardware configuration setup
+      <div>
+        <h2>Required Materials</h2>
+        <h3>- Steam Game Server Management Tool -</h3>
+        <a href=https://steamcommunity.com/dev/managegameservers>Steam Dev Manager</a>
+        This tool helps to create a dedicated game server account, which addresses the anonymous login vulnerability that existed upon initial configuration.
+        <h3>- Instructional runthrough - </h3>
+        <a href=https://stechalon.com/how-to-create-your-own-csgo-counter-strike-global-offensive-dedicated-custom-server-ubuntu-centos#run-csgo-on-server>CSGO Server Using Ubuntu 18.04</a>
+        This reference is used for the general setup and configuration of Ubuntu 18.04
+        <h3>- Ports to open at firewall - </h3>
+        <a href=https://linustechtips.com/topic/722940-what-ports-to-forward-for-a-csgo-server />Linus Tech Tips - Ports for CS:GO Server</a>
+        <h3>- Ubuntu 18.04 full guide - </h3>
+        https://www.reddit.com/r/GlobalOffensive/comments/iwm0i9/how_to_create_a_free_csgo_server_using_google/
+        While troubleshooting connectivity issues, I began comparing configurations that were present in 1, but not the other. Here is where it was discovered that improper firewall rules had been set for the GCP instance initially.
+        <h3>- Steam server configs guide - </h3>
+        https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers#autoexec.cfg
+        This reference was used for configuration of sv_* variables following server creation
+        <h3>- Configure Apache for Ubuntu - </h3>
+        https://phoenixnap.com/kb/how-to-install-apache-web-server-on-ubuntu-18-04
+        This reference is helpful for the installation of, and configuration of apache web services
+        <h3>- Install shelljs and use -</h3>
+        https://stackoverflow.com/questions/44647778/how-to-run-shell-script-file-using-nodejs
+        This reference outlines how to install shelljs and use it within a javascript file to execute shell commands from web requests.
+
+      </div>
+      <div>
+        <h2>Service Implementation:</h2>
+        <h3>- Google Cloud Platform -</h3>
+        <u>Create an instance with the minimum requirements:</u><br>
+        <b>2GB RAM</b><br>
+        <b>40GB Disk Space</b><br>
+        <p>Note: For this example runthrough - ec2-medium was used for hardware configuration setup</p>
 
 
-      Equivalent Command Line: gcloud compute instances create csgo-3660 --project=inbound-acolyte-326923 --zone=us-central1-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,subnet=default --maintenance-policy=MIGRATE
-      --service-account=851841175058-compute@developer.gserviceaccount.com
-      --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append
-      --tags=http-server,https-server
-      --create-disk=auto-delete=yes,boot=yes,device-name=csgo-3660,image=projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20211115,mode=rw,size=50,type=projects/inbound-acolyte-326923/zones/us-central1-a/diskTypes/pd-balanced
-      --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+        <h3><u>Equivalent Command Line:</u></h3>
+        <p class="red-note">
+          gcloud compute instances create csgo-3660 --project=inbound-acolyte-326923 --zone=us-central1-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,subnet=default --maintenance-policy=MIGRATE
+          --service-account=851841175058-compute@developer.gserviceaccount.com
+          --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append
+          --tags=http-server,https-server
+          --create-disk=auto-delete=yes,boot=yes,device-name=csgo-3660,image=projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20211115,mode=rw,size=50,type=projects/inbound-acolyte-326923/zones/us-central1-a/diskTypes/pd-balanced
+          --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+        </p>
+      </div>
+      <div>
 
 
-      Setup CS:GO Environment In Ubuntu 18.04 Server
-      Upon instance creation completion, SSH into the Google Cloud Platform Instance via built-in service
+        <h2>Setup CS:GO Environment In Ubuntu 18.04 Server</h2>
+        <h4>Upon instance creation completion, SSH into the Google Cloud Platform Instance via built-in service</h4>
+        <p>
+          <b>Step 1:</b> Perform System Updates <br>
+          <b class="code">
+            $sudo apt-get update && sudo apt-get upgrade </b><br>
+        </p>
+        <p>
 
-      Step 1: Perform System Updates
-      $sudo apt-get update && sudo apt-get upgrade
+          <b>Step 2:</b> Install library package for SteamCMD
+          <br>
+          <b class="code">sudo apt-get install lib32gcc1</b><br>
+        </p>
+        <p>
+          <b>Step 3:</b> Create a seperate user “steam” for running CS:GO. <br>
+          sudo useradd -m steam <br>
+          To validate the creation of steam - check the output of cat /etc/passwd <br>
+          Create UNIX password for ‘steam’
+          <br>
+          Switch user to “steam” <br>
+          <b class="code">su - steam</b><br>
+        </p>
+        <p>
 
-      Step 2: Install library package for SteamCMD
-      sudo apt-get install lib32gcc1
-      Step 3: Create a seperate user “steam” for running CS:GO.
-      sudo useradd -m steam
-      To validate the creation of steam - check the output of cat /etc/passwd
 
-      Create UNIX password for ‘steam’
+          <b>Step 4:</b> Create an installation path directory where we download SteamCMD. <br>
+          <b class="code">mkdir ~/Steam && cd ~/Steam </b><br>
+        </p>
+      </div>
+      <div>
+        <h2>Downloading and Installing SteamCMD</h2>
+        <p><b>Step 1:</b> Download the latest version of SteamCMD <br>
+        <b class="code">wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</b> <br>
+        <b>Step 2:</b> Extract the downloaded file. <br>
+        <b class="code">tar xf steamcmd_linux.tar.gz</b> <br>
+        <b>Step 3:</b> Run SteamCMD script file <br>
+        <b class="code">./steamcmd.sh</b><br><br>
+          This file will download the update from steam
+          After that, the updated steam will provide you the cmd prompt as shown below. <br><br>
+          <b class="code">Steam></b> <br>
 
-      Switch user to “steam”
-      su - steam
-      Step 3: Create an installation path directory where we download SteamCMD.
-      mkdir ~/Steam && cd ~/Steam
-      Downloading and Installing SteamCMD
-      Step 1: Download the latest version of SteamCMD.
-      wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+        <b>Step 4:</b> Set your CS:GO dedicated server install directory. <br>
+        <b class="code">force_install_dir ./cs_go/</b> <br>
+        <b>Step 5:</b> Login using an anonymous steam account here. <br>
+        <b class="code">Steam> login anonymous</b> <br>
 
-      Step 2: Extract the downloaded file.
-      tar xf steamcmd_linux.tar.gz
+        <b>Step 6:</b> Finally, download and install CS:GO on the server. <br>
+        <b class="code">app_update 740 validate</b> <br>
+        </p>
+        <div class="red-note"><b>Note:</b> This process will take an extended period of time to complete ~45 minutes for download, and another
+          You will see “Success! App ‘740’ fully installed” as below.
+        </div>
+      </div>
+      <div>
 
-      Step 3: Run SteamCMD script file
-      ./steamcmd.sh
-      This file will download the update from steam
-      After that, the updated steam will provide you the cmd prompt as shown below.
-      Steam>
-      Step 4: Set your CS:GO dedicated server install directory.
-      force_install_dir ./cs_go/
-      Step 5: Login using an anonymous steam account here.
-      Steam> login anonymous
 
-      Step 6: Finally, download and install CS:GO on the server.
-      app_update 740 validate
-      Note: This process will take an extended period of time to complete ~45 minutes for download, and another
-      You will see “Success! App ‘740’ fully installed” as below.
-      Allow Access on Server’s TCP and UDP Ports
-      In order to connect the game server, TCP and UDP ports should be allowed to all the players from the server.
-      Configuring the firewall to allow connections to the server
+        Allow Access on Server’s TCP and UDP Ports
+        In order to connect the game server, TCP and UDP ports should be allowed to all the players from the server.
+      </div>
+      <div>
 
-      Select "Firewall" on the left-hand side
-      Click "create firewall rule" at the top
-      Name your firewall rule
-      For "Targets", select "All instances in the network" (provided you don't have any other servers)
-      For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
-      Check "tcp", and enter 27015-27030,27036-27037
-      Check "udp", and enter 4380,27000-27031,27036
 
-      Register CS:GO Game Auth Token ID
-      In order to run the game you need your steam token ID. Without a token ID, you won’t be able to host a game.
-      Your steam account should be qualified for generating token ID. Check here for the requirements and get your token ID.
-      Follow below picture to generate your auth token ID.
+        Configuring the firewall to allow connections to the server
 
-      Note: The appID 740 is the registered ID for Counter-Strike: Global Offensive dedicated server whereas appID 730 is the official game ID.
-      You will generate a token ID similar to this X38F6E71A3B8G6FE08354AF5BE078.
+        Select "Firewall" on the left-hand side
+        Click "create firewall rule" at the top
+        Name your firewall rule
+        For "Targets", select "All instances in the network" (provided you don't have any other servers)
+        For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
+        Check "tcp", and enter 27015-27030,27036-27037
+        Check "udp", and enter 4380,27000-27031,27036
+      </div>
+      <div>
+
+
+        Register CS:GO Game Auth Token ID
+        In order to run the game you need your steam token ID. Without a token ID, you won’t be able to host a game.
+        Your steam account should be qualified for generating token ID. Check here for the requirements and get your token ID.
+        Follow below picture to generate your auth token ID.
+
+        Note: The appID 740 is the registered ID for Counter-Strike: Global Offensive dedicated server whereas appID 730 is the official game ID.
+        You will generate a token ID similar to this X38F6E71A3B8G6FE08354AF5BE078.
+      </div>
       Run CS:GO On Server
       There are specific commands to run different game modes. This means you have to enter different commands to run Causal, Competitive, and Deathmatch Mode. Below is an example of a command to run a casual match on de_dust2.
       Important: You should be inside the cs_go directory before you run the command.
