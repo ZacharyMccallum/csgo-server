@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
 const shell = require('shelljs')
 
 
