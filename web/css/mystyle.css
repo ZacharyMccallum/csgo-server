@@ -13,6 +13,37 @@
   display: inline-grid;
 }
 
+.red-note {
+  background-color: #c9a8a8;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.guide {
+  border: 2px solid black;
+}
+.casual {
+  background-color: #008CBA;
+}
+.comp {
+  background-color: #FF0000;
+}
+.dm {
+  background-color: #4CAF50;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .largeimage {
   width: 400px;
   height: 300px;
@@ -44,6 +75,7 @@ main figure {
   object-fit: contain;
   object-position: center;
 }
+
 /* unvisited link */
 main li a:link {
   color: blue;
