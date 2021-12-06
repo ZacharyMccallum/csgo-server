@@ -166,23 +166,19 @@
         </div>
       </div>
       <div>
-
-
-        Allow Access on Server’s TCP and UDP Ports
+        <h2>Allow Access on Server’s TCP and UDP Ports</h2>
         In order to connect the game server, TCP and UDP ports should be allowed to all the players from the server.
-      </div>
-      <div>
 
+        <h2>Configuring the firewall to allow connections to the server</h2>
 
-        Configuring the firewall to allow connections to the server
-
-        Select "Firewall" on the left-hand side
-        Click "create firewall rule" at the top
-        Name your firewall rule
-        For "Targets", select "All instances in the network" (provided you don't have any other servers)
-        For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
-        Check "tcp", and enter 27015-27030,27036-27037
-        Check "udp", and enter 4380,27000-27031,27036
+        <ul><b>Step 1: </b>Select "Firewall" on the left-hand side
+        <b>Step 2: </b>Click "create firewall rule" at the top
+        <b>Step 3: </b>Name your firewall rule
+        <b>Step 4: </b>For "Targets", select "All instances in the network" (provided you don't have any other servers)
+        <b>Step 5: </b>For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
+        <li>Check "tcp", and enter 27015-27030,27036-27037</li>
+        <li>Check "udp", and enter 4380,27000-27031,27036</li>
+</ul>
       </div>
       <div>
 
