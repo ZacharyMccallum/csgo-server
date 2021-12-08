@@ -204,133 +204,133 @@
         <div class='red-note'>
           Important: You should be inside the cs_go directory before you run the command.
         </div>
-        <div class='code'>
+        <b class='code'>
           ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
 
-        </div>
-        <div>
-          <p>For different modes, you need to change the game_mode value.
-            Casual = game_mode 0
-            Competitive = game_mode 1
-            Deathmatch = game_mode 2
-          </p>
-        </div>
-        <div>
-          Replace “[token_here]” in the below command and enter.
-          Configure autoexec.cfg
-          In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.
-
-          Path to autoexec.cfg - /home/steam/Steam/cs_go/csgo/cfg/autoexec.cfg
-          Configuration used for this Project
-          hostname "CS:GO Server - CSI3660"
-          sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564
-          sv_minupdaterate 128
-          sv_mincmdrate 128
-          log on //This is set to turn on logging! Don't put this in your server.cfg
-          rcon_password "yourrconpassword"
-          sv_password "" //Only set this if you intend to have a private server!
-          sv_cheats 0 //This should always be set, so you know it's not on
-          sv_lan 0 //This should always be set, so you know it's not on
-          exec banned_user.cfg
-          exec banned_ip.cfg
-
-          <div class='red-note'>
-            Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.
-          </div>
-          <b>CASUAL GAME MODE</b>
-          <div class='code'>
-            ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-          </div>
-          <b>COMPETITIVE GAME MODE</b>
-          <div class='code'>
-            ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-          </div>
-          <p>DEATHMATCH GAME MODE</p>
-          <div class='code'>
-            ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-          </div>
-
-          You will see the public IP of your game server after entering the above command.
-        </div>
       </div>
       <div>
-        <h2>Join CS:GO Server</h2>
-        <p>Launch steam application and open CS:GO. There are two ways you can join the game server. <br>
-          First, connect through the game console. For that enable the developer console. <br>
-          Get back to the dashboard and open the console using “~” keyword and type “connect < your-ip-address>”. <br>
-            <br>
-            Second, adding server IP to your favorite list. For that, go to the Community Server Browser. <br>
-            Click on the favourite tab. <br>
-            Add your server IP and connect it. <br>
+        <p>For different modes, you need to change the game_mode value.
+          Casual = game_mode 0
+          Competitive = game_mode 1
+          Deathmatch = game_mode 2
         </p>
-        <h2>Run CS:GO In Server’s Background</h2>
-        <p>
-          Your game will be disconnected or stopped when you log out from the server.
-          It is not possible to host the game staying logged in 24x7 on the server. So, we will host the game in a background session. By doing so, your game won’t stop until your server gets turned off.
-          For that, we will install a screen application on the server.
-        </p>
-        <b>Install Screen In Ubuntu</b>
+      </div>
+      <div>
+        Replace “[token_here]” in the below command and enter.
+        Configure autoexec.cfg
+        In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.
+
+        Path to autoexec.cfg - /home/steam/Steam/cs_go/csgo/cfg/autoexec.cfg
+        Configuration used for this Project
+        hostname "CS:GO Server - CSI3660"
+        sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564
+        sv_minupdaterate 128
+        sv_mincmdrate 128
+        log on //This is set to turn on logging! Don't put this in your server.cfg
+        rcon_password "yourrconpassword"
+        sv_password "" //Only set this if you intend to have a private server!
+        sv_cheats 0 //This should always be set, so you know it's not on
+        sv_lan 0 //This should always be set, so you know it's not on
+        exec banned_user.cfg
+        exec banned_ip.cfg
+
         <div class='red-note'>
-          sudo apt-get install screen -y
+          Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.
         </div>
-        <b>Install Screen In CentOS</b>
-        <div class="code">
-          sudo yum install screen -y
-        </div>
-        After installation, create a new session named “csgo” by typing: <br>
-        <div class='code'> screen -R csgo
-        </div>
-        Now run the game host command. In my case, I am running competitive game mode.
-        <div class='code'>
+        <b>CASUAL GAME MODE</b>
+        <b class='code'>
+          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+        </b>
+        <b>COMPETITIVE GAME MODE</b>
+        <b class='code'>
           ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-        </div>
-        When the game is hosted successfully, exit from that screen(detach) by pressing the keys at the same time.
-        <div class="code">
-          Crtl + a + d
-        </div>
-        Now you are out of that session. To see the running background session type
-        <div class="code">
-          screen -ls
-        </div>
+        </b>
+        <p>DEATHMATCH GAME MODE</p>
+        <b class='code'>
+          ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+        </b>
 
-        You will get the output like this:
-        There is a screen on:
-        7166.csgo (Detached)
-        1 Socket in /run/screen/S-stechalon.
-        7166 is the ID and csgo is the name of the screen.
-        To rejoin the detached screen type:
-        <div class="code">
-          screen -r 7166
-        </div>
-
+        You will see the public IP of your game server after entering the above command.
       </div>
-<div>
-    <b>Install Web Services</b>
-<p>
-      Before installing new software, it’s a good idea to refresh your local software package database to make sure you are accessing the latest versions. This helps cut down on the time it takes to update after installation, and it also helps
-      prevent zero-day exploits against outdated software.
-</p>
+    </div>
+    <div>
+      <h2>Join CS:GO Server</h2>
+      <p>Launch steam application and open CS:GO. There are two ways you can join the game server. <br>
+        First, connect through the game console. For that enable the developer console. <br>
+        Get back to the dashboard and open the console using “~” keyword and type “connect < your-ip-address>”. <br>
+          <br>
+          Second, adding server IP to your favorite list. For that, go to the Community Server Browser. <br>
+          Click on the favourite tab. <br>
+          Add your server IP and connect it. <br>
+      </p>
+      <h2>Run CS:GO In Server’s Background</h2>
+      <p>
+        Your game will be disconnected or stopped when you log out from the server.
+        It is not possible to host the game staying logged in 24x7 on the server. So, we will host the game in a background session. By doing so, your game won’t stop until your server gets turned off.
+        For that, we will install a screen application on the server.
+      </p>
+      <b>Install Screen In Ubuntu</b>
+      <b class='code'>
+        sudo apt-get install screen -y
+      </b>
+      <b>Install Screen In CentOS</b>
+      <b class="code">
+        sudo yum install screen -y
+      </b>
+      After installation, create a new session named “csgo” by typing: <br>
+      <b class='code'> screen -R csgo
+      </b>
+      Now run the game host command. In my case, I am running competitive game mode.
+      <b class='code'>
+        ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+      </b>
+      When the game is hosted successfully, exit from that screen(detach) by pressing the keys at the same time.
+      <b class="code">
+        Crtl + a + d
+    </div>
+    Now you are out of that session. To see the running background session type
+    <b class='code'>
+      screen -ls
+    </b>
+
+    <b>You will get the output like this:</b>
+    There is a screen on: <br>
+    [PID].csgo (Detached) <br>
+    1 Socket in /run/screen/[HOSTNAME]. <br>
+    [PID] is the ID and csgo is the name of the screen. <br>
+    To rejoin the detached screen type: <br>
+    <b class="code">
+      screen -r [PID]
+    </b>
+
+    
+    <div>
+      <b>Install Web Services</b>
+      <p>
+        Before installing new software, it’s a good idea to refresh your local software package database to make sure you are accessing the latest versions. This helps cut down on the time it takes to update after installation, and it also helps
+        prevent zero-day exploits against outdated software.
+      </p>
       <b>Open a terminal and type:</b>
-      <div class="code">
+      <b class='code'>
         sudo apt-get update
-      </div>
+      </b>
       Let the package manager finish updating.
 
       <b>Step 1: Install Apache</b>
       To install the Apache package on Ubuntu, use the command:
-      <div class='code'>
+      <b class='code'>
         sudo apt-get install apache2
-</div>
+      </b>
       The system prompts for confirmation – do so, and allow the system to complete the installation.
 
       <b>Start Apache:</b>
-      <div class='code'>
-      sudo systemctl start apache2.service
-</div>
+      <b class='code'>
+        sudo systemctl start apache2.service
+    </div>
 
-      <b>Backup Strategy</b>
-      Backups are automatically set up to run at 2 am on the first day of a new month.
-      </div>
+    <b>Backup Strategy</b>
+    Backups are automatically set up to run at 2 am on the first day of a new month.
+    </div>
     </div>
   </header>
 </body>
