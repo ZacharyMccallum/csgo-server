@@ -66,7 +66,7 @@
           <i>sudo apt-get install lib32gcc1</i><br />
         </p>
         <h2>Counter-Strike: Global Offensive</h2>
-          Environment to be emulated as a server instance
+        Environment to be emulated as a server instance
       </div>
       <div>
         <h2>Required Materials</h2>
@@ -144,22 +144,22 @@
       <div>
         <h2>Downloading and Installing SteamCMD</h2>
         <p><b>Step 1:</b> Download the latest version of SteamCMD <br>
-        <b class="code">wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</b> <br>
-        <b>Step 2:</b> Extract the downloaded file. <br>
-        <b class="code">tar xf steamcmd_linux.tar.gz</b> <br>
-        <b>Step 3:</b> Run SteamCMD script file <br>
-        <b class="code">./steamcmd.sh</b><br><br>
+          <b class="code">wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</b> <br>
+          <b>Step 2:</b> Extract the downloaded file. <br>
+          <b class="code">tar xf steamcmd_linux.tar.gz</b> <br>
+          <b>Step 3:</b> Run SteamCMD script file <br>
+          <b class="code">./steamcmd.sh</b><br><br>
           This file will download the update from steam
           After that, the updated steam will provide you the cmd prompt as shown below. <br><br>
           <b class="code">Steam></b> <br>
 
-        <b>Step 4:</b> Set your CS:GO dedicated server install directory. <br>
-        <b class="code">force_install_dir ./cs_go/</b> <br>
-        <b>Step 5:</b> Login using an anonymous steam account here. <br>
-        <b class="code">Steam> login anonymous</b> <br>
+          <b>Step 4:</b> Set your CS:GO dedicated server install directory. <br>
+          <b class="code">force_install_dir ./cs_go/</b> <br>
+          <b>Step 5:</b> Login using an anonymous steam account here. <br>
+          <b class="code">Steam> login anonymous</b> <br>
 
-        <b>Step 6:</b> Finally, download and install CS:GO on the server. <br>
-        <b class="code">app_update 740 validate</b> <br>
+          <b>Step 6:</b> Finally, download and install CS:GO on the server. <br>
+          <b class="code">app_update 740 validate</b> <br>
         </p>
         <div class="red-note"><b>Note:</b> This process will take an extended period of time to complete ~45 minutes for download, and another
           You will see “Success! App ‘740’ fully installed” as below.
@@ -172,111 +172,165 @@
         <h2>Configuring the firewall to allow connections to the server</h2>
 
         <ul><b>Step 1: </b>Select "Firewall" on the left-hand side
-        <b>Step 2: </b>Click "create firewall rule" at the top
-        <b>Step 3: </b>Name your firewall rule
-        <b>Step 4: </b>For "Targets", select "All instances in the network" (provided you don't have any other servers)
-        <b>Step 5: </b>For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
-        <li>Check "tcp", and enter 27015-27030,27036-27037</li>
-        <li>Check "udp", and enter 4380,27000-27031,27036</li>
-</ul>
+          <b>Step 2: </b>Click "create firewall rule" at the top
+          <b>Step 3: </b>Name your firewall rule
+          <b>Step 4: </b>For "Targets", select "All instances in the network" (provided you don't have any other servers)
+          <b>Step 5: </b>For "Source IP ranges", enter 0.0.0.0/0 to allow any IP addresses to connect
+          <li>Check "tcp", and enter 27015-27030,27036-27037</li>
+          <li>Check "udp", and enter 4380,27000-27031,27036</li>
+        </ul>
       </div>
       <div>
 
 
-        Register CS:GO Game Auth Token ID
-        In order to run the game you need your steam token ID. Without a token ID, you won’t be able to host a game.
-        Your steam account should be qualified for generating token ID. Check here for the requirements and get your token ID.
-        Follow below picture to generate your auth token ID.
-
-        Note: The appID 740 is the registered ID for Counter-Strike: Global Offensive dedicated server whereas appID 730 is the official game ID.
+        <h2>Register CS:GO Game Auth Token ID</h2>
+        <p>In order to run the game you need your steam token ID. Without a token ID, you won’t be able to host a game. <br>
+          Your steam account should be qualified for generating token ID. Check here for the requirements and get your token ID. <br>
+          Follow below picture to generate your auth token ID.
+        </p>
+        <figure>
+          <img width="80%" src="../src/img/steamtoken.png">
+        </figure>
+        <div class='red-note'>
+          Note: The appID 740 is the registered ID for Counter-Strike: Global Offensive dedicated server whereas appID 730 is the official game ID.
+        </div>
         You will generate a token ID similar to this X38F6E71A3B8G6FE08354AF5BE078.
       </div>
-      Run CS:GO On Server
-      There are specific commands to run different game modes. This means you have to enter different commands to run Causal, Competitive, and Deathmatch Mode. Below is an example of a command to run a casual match on de_dust2.
-      Important: You should be inside the cs_go directory before you run the command.
-      ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-      For different modes, you need to change the game_mode value.
-      Casual = game_mode 0
-      Competitive = game_mode 1
-      Deathmatch = game_mode 2
+      <div>
+        <h2>Run CS:GO On Server</h2>
+        <p>
+          There are specific commands to run different game modes. This means you have to enter different commands to run Causal, Competitive, and Deathmatch Mode. Below is an example of a command to run a casual match on de_dust2.
+        </p>
+        <div class='red-note'>
+          Important: You should be inside the cs_go directory before you run the command.
+        </div>
+        <div class='code'>
+          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
 
-      Replace “[token_here]” in the below command and enter.
-      Configure autoexec.cfg
-      In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.
+        </div>
+        <div>
+          <p>For different modes, you need to change the game_mode value.
+            Casual = game_mode 0
+            Competitive = game_mode 1
+            Deathmatch = game_mode 2
+          </p>
+        </div>
+        <div>
+          Replace “[token_here]” in the below command and enter.
+          Configure autoexec.cfg
+          In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.
 
-      Path to autoexec.cfg -
-      Configuration used for this Project
-      hostname "CS:GO Server - CSI3660"
-      sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564
-      sv_minupdaterate 128
-      sv_mincmdrate 128
-      log on //This is set to turn on logging! Don't put this in your server.cfg
-      rcon_password "yourrconpassword"
-      sv_password "" //Only set this if you intend to have a private server!
-      sv_cheats 0 //This should always be set, so you know it's not on
-      sv_lan 0 //This should always be set, so you know it's not on
-      exec banned_user.cfg
-      exec banned_ip.cfg
+          Path to autoexec.cfg - /home/steam/Steam/cs_go/csgo/cfg/autoexec.cfg
+          Configuration used for this Project
+          hostname "CS:GO Server - CSI3660"
+          sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564
+          sv_minupdaterate 128
+          sv_mincmdrate 128
+          log on //This is set to turn on logging! Don't put this in your server.cfg
+          rcon_password "yourrconpassword"
+          sv_password "" //Only set this if you intend to have a private server!
+          sv_cheats 0 //This should always be set, so you know it's not on
+          sv_lan 0 //This should always be set, so you know it's not on
+          exec banned_user.cfg
+          exec banned_ip.cfg
 
+          <div class='red-note'>
+            Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.
+          </div>
+          <b>CASUAL GAME MODE</b>
+          <div class='code'>
+            ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          </div>
+          <b>COMPETITIVE GAME MODE</b>
+          <div class='code'>
+            ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          </div>
+          <p>DEATHMATCH GAME MODE</p>
+          <div class='code'>
+            ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          </div>
 
-      Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.
-      CASUAL GAME MODE
-      ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-      COMPETITIVE GAME MODE
-      ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-      DEATHMATCH GAME MODE
-      ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
-      You will see the public IP of your game server after entering the above command.
-      Join CS:GO Server
-      Launch steam application and open CS:GO. There are two ways you can join the game server.
-      First, connect through the game console. For that enable the developer console.
-      Get back to the dashboard and open the console using “~” keyword and type “connect < your-ip-address>”.
-        Second, adding server IP to your favorite list. For that, go to the Community Server Browser.
-        Click on the favourite tab.
-        Add your server IP and connect it.
-        Run CS:GO In Server’s Background
-        Your game will be disconnected or stopped when you log out from the server.
-        It is not possible to host the game staying logged in 24x7 on the server. So, we will host the game in a background session. By doing so, your game won’t stop until your server gets turned off.
-        For that, we will install a screen application on the server.
-        Install Screen In Ubuntu
-        sudo apt-get install screen -y
-        Install Screen In CentOS
-        sudo yum install screen -y
-        After installation, create a new session named “csgo” by typing:
-        screen -R csgo
+          You will see the public IP of your game server after entering the above command.
+        </div>
+      </div>
+      <div>
+        <h2>Join CS:GO Server</h2>
+        <p>Launch steam application and open CS:GO. There are two ways you can join the game server. <br>
+          First, connect through the game console. For that enable the developer console. <br>
+          Get back to the dashboard and open the console using “~” keyword and type “connect < your-ip-address>”. <br>
+            <br>
+            Second, adding server IP to your favorite list. For that, go to the Community Server Browser. <br>
+            Click on the favourite tab. <br>
+            Add your server IP and connect it. <br>
+        </p>
+        <h2>Run CS:GO In Server’s Background</h2>
+        <p>
+          Your game will be disconnected or stopped when you log out from the server.
+          It is not possible to host the game staying logged in 24x7 on the server. So, we will host the game in a background session. By doing so, your game won’t stop until your server gets turned off.
+          For that, we will install a screen application on the server.
+        </p>
+        <b>Install Screen In Ubuntu</b>
+        <div class='red-note'>
+          sudo apt-get install screen -y
+        </div>
+        <b>Install Screen In CentOS</b>
+        <div class="code">
+          sudo yum install screen -y
+        </div>
+        After installation, create a new session named “csgo” by typing: <br>
+        <div class='code'> screen -R csgo
+        </div>
         Now run the game host command. In my case, I am running competitive game mode.
-        ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+        <div class='code'>
+          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+        </div>
         When the game is hosted successfully, exit from that screen(detach) by pressing the keys at the same time.
-        Crtl + a + d
+        <div class="code">
+          Crtl + a + d
+        </div>
         Now you are out of that session. To see the running background session type
-        screen -ls
+        <div class="code">
+          screen -ls
+        </div>
+
         You will get the output like this:
         There is a screen on:
         7166.csgo (Detached)
         1 Socket in /run/screen/S-stechalon.
         7166 is the ID and csgo is the name of the screen.
         To rejoin the detached screen type:
-        screen -r 7166
+        <div class="code">
+          screen -r 7166
+        </div>
 
-        Install Web Services
-        Before installing new software, it’s a good idea to refresh your local software package database to make sure you are accessing the latest versions. This helps cut down on the time it takes to update after installation, and it also helps
-        prevent zero-day exploits against outdated software.
-
-        Open a terminal and type:
+      </div>
+<div>
+    <b>Install Web Services</b>
+<p>
+      Before installing new software, it’s a good idea to refresh your local software package database to make sure you are accessing the latest versions. This helps cut down on the time it takes to update after installation, and it also helps
+      prevent zero-day exploits against outdated software.
+</p>
+      <b>Open a terminal and type:</b>
+      <div class="code">
         sudo apt-get update
-        Let the package manager finish updating.
+      </div>
+      Let the package manager finish updating.
 
-        Step 1: Install Apache
-        To install the Apache package on Ubuntu, use the command:
+      <b>Step 1: Install Apache</b>
+      To install the Apache package on Ubuntu, use the command:
+      <div class='code'>
         sudo apt-get install apache2
-        The system prompts for confirmation – do so, and allow the system to complete the installation.
+</div>
+      The system prompts for confirmation – do so, and allow the system to complete the installation.
 
-        <b>Start Apache:</b>
-        sudo systemctl start apache2.service
+      <b>Start Apache:</b>
+      <div class='code'>
+      sudo systemctl start apache2.service
+</div>
 
-
-        <b>Backup Strategy</b>
-        Backups are automatically set up to run at 2 am on the first day of a new month. The backup contents are shown below
+      <b>Backup Strategy</b>
+      Backups are automatically set up to run at 2 am on the first day of a new month.
+      </div>
     </div>
   </header>
 </body>
