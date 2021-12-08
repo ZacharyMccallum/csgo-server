@@ -267,30 +267,30 @@
       <p>
         Your game will be disconnected or stopped when you log out from the server.
         It is not possible to host the game staying logged in 24x7 on the server. So, we will host the game in a background session. By doing so, your game won’t stop until your server gets turned off.
-        For that, we will install a screen application on the server.
+        For that, we will install a screen application on the server.<br>
       </p>
       <b>Install Screen In Ubuntu</b>
       <b class='code'>
-        sudo apt-get install screen -y
+        sudo apt-get install screen -y<br>
       </b>
       <b>Install Screen In CentOS</b>
       <b class="code">
-        sudo yum install screen -y
+        sudo yum install screen -y<br>
       </b>
       After installation, create a new session named “csgo” by typing: <br>
-      <b class='code'> screen -R csgo
+      <b class='code'> screen -R csgo<br>
       </b>
-      Now run the game host command. In my case, I am running competitive game mode.
+      Now run the game host command. In my case, I am running competitive game mode.<br>
       <b class='code'>
-        ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+        ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try<br>
       </b>
-      When the game is hosted successfully, exit from that screen(detach) by pressing the keys at the same time.
+      When the game is hosted successfully, exit from that screen(detach) by pressing the keys at the same time.<br>
       <b class="code">
-        Crtl + a + d
+        Crtl + a + d<br>
     </div>
     Now you are out of that session. To see the running background session type
     <b class='code'>
-      screen -ls
+      screen -ls  <br>
     </b>
 
     <b>You will get the output like this:</b>
@@ -300,10 +300,10 @@
     [PID] is the ID and csgo is the name of the screen. <br>
     To rejoin the detached screen type: <br>
     <b class="code">
-      screen -r [PID]
+      screen -r [PID]<br>
     </b>
 
-    
+
     <div>
       <b>Install Web Services</b>
       <p>
@@ -312,25 +312,25 @@
       </p>
       <b>Open a terminal and type:</b>
       <b class='code'>
-        sudo apt-get update
+        sudo apt-get update<br>
       </b>
-      Let the package manager finish updating.
+      Let the package manager finish updating.<br>
 
-      <b>Step 1: Install Apache</b>
-      To install the Apache package on Ubuntu, use the command:
+      <b>Step 1: Install Apache</b><br>
+      To install the Apache package on Ubuntu, use the command:<br>
       <b class='code'>
-        sudo apt-get install apache2
+        sudo apt-get install apache2<br>
       </b>
-      The system prompts for confirmation – do so, and allow the system to complete the installation.
+      The system prompts for confirmation – do so, and allow the system to complete the installation.<br>
 
-      <b>Start Apache:</b>
+      <b>Start Apache:</b><br>
       <b class='code'>
-        sudo systemctl start apache2.service
-    </div>
+        sudo systemctl start apache2.service<br>
+    </b>
 
     <b>Backup Strategy</b>
-    Backups are automatically set up to run at 2 am on the first day of a new month.
+    Backups are automatically set up to run at 2 am on the first day of a new month.<br>
     </div>
-    </div>
+
   </header>
 </body>
