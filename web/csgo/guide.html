@@ -216,41 +216,43 @@
         </p>
       </div>
       <div>
-        Replace “[token_here]” in the below command and enter.
-        Configure autoexec.cfg
-        In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.
+        Replace “[token_here]” in the below command and enter.<br>
 
-        Path to autoexec.cfg - /home/steam/Steam/cs_go/csgo/cfg/autoexec.cfg
-        Configuration used for this Project
-        hostname "CS:GO Server - CSI3660"
-        sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564
-        sv_minupdaterate 128
-        sv_mincmdrate 128
-        log on //This is set to turn on logging! Don't put this in your server.cfg
-        rcon_password "yourrconpassword"
-        sv_password "" //Only set this if you intend to have a private server!
-        sv_cheats 0 //This should always be set, so you know it's not on
-        sv_lan 0 //This should always be set, so you know it's not on
-        exec banned_user.cfg
-        exec banned_ip.cfg
+        <b>Configure autoexec.cfg</b><br>
+        In order to allow public users to acces the server, an autoexec.cfg file must be created and updated.<br>
+
+        Path to autoexec.cfg - /home/steam/Steam/cs_go/csgo/cfg/autoexec.cfg <br>
+        <b>Configuration used for this Project</b><br>
+        <b class='code'>hostname "CS:GO Server - CSI3660"<br>
+        sv_setsteamaccount 78B07BAA206BCAA92927545EE2684564<br>
+        sv_minupdaterate 128<br>
+        sv_mincmdrate 128<br>
+        log on //This is set to turn on logging! Don't put this in your server.cfg<br>
+        rcon_password "yourrconpassword"<br>
+        sv_password "" //Only set this if you intend to have a private server!<br>
+        sv_cheats 0 //This should always be set, so you know it's not on<br>
+        sv_lan 0 //This should always be set, so you know it's not on<br>
+        exec banned_user.cfg<br>
+        exec banned_ip.cfg<br>
+</b>
 
         <div class='red-note'>
-          Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.
+          Note: If you cannot connect right away, please be patient! It takes some time to set up the server fully to be ready for action.<br>
         </div>
-        <b>CASUAL GAME MODE</b>
+        <b>CASUAL GAME MODE</b><br>
         <b class='code'>
-          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 0 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try<br>
         </b>
         <b>COMPETITIVE GAME MODE</b>
         <b class='code'>
-          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          ./srcds_run -game csgo -console -usercon + game_type 0 + game_mode 1 + mapgroup mg_active + map de_dust2 + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try<br>
         </b>
         <p>DEATHMATCH GAME MODE</p>
         <b class='code'>
-          ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try
+          ./srcds_run -game csgo -console -usercon + game_type 1 + game_mode 2 + mapgroup mg_allclassic + map de_dust + sv_setsteamaccount [token_here] THISGSLTHERE -net_port_try<br>
         </b>
 
-        You will see the public IP of your game server after entering the above command.
+        You will see the public IP of your game server after entering the above command.<br>
       </div>
     </div>
     <div>
